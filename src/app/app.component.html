@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <section>
+    <app-add-product
+      (addNewProduct)="onCreateNewProduct($event)"
+    ></app-add-product>
+  </section>
+
+  <hr class="my-5" />
+
+  <section>
+    <app-filter-product
+      [allProducts]="allProducts"
+      [inStock]="productsInStock"
+      [outOfStock]="productsOutOfStock"
+      (selectedRadioBtnChanged)="onFilterChanged($event)"
+    ></app-filter-product>
+  </section>
+
+  <hr class="my-5" />
+
+  <section>
+    <div class="row g-3">
+      @for (p of products; track $index) { @if(selectedRadioBtm === 'all' ||
+      p.is_in_inventory.toString() === selectedRadioBtm){
+      <div class="col-md-3">
+        <h3>{{ $index }}</h3>
+        <app-product-list [product]="p"></app-product-list>
+      </div>
+      } }
+    </div>
+  </section>
+</div>

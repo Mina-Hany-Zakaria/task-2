@@ -1,0 +1,67 @@
+<div class="mb-3">
+  <div class="form-floating my-3">
+    <input
+      type="text"
+      class="form-control"
+      id="product-title"
+      placeholder="product title"
+      [(ngModel)]="newProduct.name"
+    />
+    <label for="product-title">product title</label>
+  </div>
+
+  <div class="form-floating my-3">
+    <textarea
+      class="form-control"
+      placeholder="enter a product description here"
+      id="product-description"
+      style="height: 100px"
+      [(ngModel)]="newProduct.description"
+    ></textarea>
+    <label for="product-description">product description</label>
+  </div>
+
+  <div class="form-floating my-3">
+    <input
+      type="text"
+      class="form-control"
+      id="product-price"
+      placeholder="product price"
+      [(ngModel)]="newProduct.price"
+    />
+    <label for="product-price">product price</label>
+  </div>
+
+  <div class="form-floating my-3">
+    <input
+      type="text"
+      class="form-control"
+      id="product-brand"
+      placeholder="product brand"
+      [(ngModel)]="newProduct.brand"
+    />
+    <label for="product-price">product brand</label>
+  </div>
+
+  <div class="form-floating my-3">
+    <input
+      type="text"
+      class="form-control"
+      id="product-image-url"
+      placeholder="product image url"
+      [(ngModel)]="newProduct.imageURL"
+    />
+    <label for="product-image-url">product image url</label>
+  </div>
+
+  <select
+    class="form-select form-select-lg"
+    aria-label="Default select example"
+    [(ngModel)]="newProduct.is_in_inventory"
+  >
+    <option value="false">Out of Stock</option>
+    <option value="true">In Stock</option>
+  </select>
+</div>
+
+<button class="btn btn-primary" (click)="onAddNewProduct()">add product</button>
